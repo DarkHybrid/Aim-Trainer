@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://co1bqli300oma"]
+
+[node name="shooting range" type="Node2D"]
