@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://co1bqli300oma"]
+[gd_scene load_steps=2 format=3 uid="uid://co1bqli300oma"]
+
+[ext_resource type="PackedScene" uid="uid://ow7101idlpsf" path="res://cursor.tscn" id="1_ouqnn"]
 
 [node name="shooting range" type="Node2D"]
+
+[node name="cursor" parent="." instance=ExtResource("1_ouqnn")]

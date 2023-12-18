@@ -1,10 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://ow7101idlpsf"]
 
 [ext_resource type="Script" path="res://scripts/cursor.gd" id="1_wa47r"]
-[ext_resource type="Texture2D" uid="uid://sg4ilfxf51nk" path="res://icon.svg" id="2_edwsi"]
+[ext_resource type="Texture2D" uid="uid://sg4ilfxf51nk" path="res://icon.svg" id="2_caw55"]
 
 [node name="cursor" type="CharacterBody2D"]
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_wa47r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_edwsi")
+texture = ExtResource("2_caw55")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

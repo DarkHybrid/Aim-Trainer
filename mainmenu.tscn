@@ -21,3 +21,5 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "start"
 script = ExtResource("1_ibl1n")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
