@@ -1,7 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://co1bqli300oma"]
+[gd_scene load_steps=7 format=3 uid="uid://co1bqli300oma"]
 
+[ext_resource type="Script" path="res://shooting_range.gd" id="1_42342"]
 [ext_resource type="PackedScene" uid="uid://ow7101idlpsf" path="res://cursor.tscn" id="1_ouqnn"]
+[ext_resource type="PackedScene" uid="uid://1p0gdp3fmd40" path="res://target.tscn" id="2_42usk"]
+[ext_resource type="FontFile" uid="uid://bkxy3l4hhwk1b" path="res://nintendo-nes-font.ttf" id="3_u07df"]
+[ext_resource type="Script" path="res://score.gd" id="4_ev6c4"]
+[ext_resource type="Script" path="res://time.gd" id="6_a1bl2"]
 
 [node name="shooting range" type="Node2D"]
+script = ExtResource("1_42342")
+
+[node name="target" parent="." instance=ExtResource("2_42usk")]
+position = Vector2(567, 334)
 
 [node name="cursor" parent="." instance=ExtResource("1_ouqnn")]
+
+[node name="score" type="Label" parent="."]
+texture_filter = 1
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 51.0
+offset_bottom = 34.0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_u07df")
+script = ExtResource("4_ev6c4")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="time" type="Label" parent="."]
+texture_filter = 1
+offset_left = 14.0
+offset_top = 588.0
+offset_right = 54.0
+offset_bottom = 611.0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_u07df")
+script = ExtResource("6_a1bl2")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
