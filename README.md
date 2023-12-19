@@ -15,3 +15,10 @@ This project is an aim training game developed in Godot Engine. It's designed to
 I will release the game on itch.io when it's in a playable state.
 
 if you want to use this project for yourself you can download source and import it as project in godot.
+
+## To-Do
+
+- Sound
+- Music
+- Options
+  - customization (customizable timelimit, crosshair, sounds, etc.)
