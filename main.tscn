@@ -1,8 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5vpdw2pi1lv5"]
+[gd_scene load_steps=4 format=3 uid="uid://c5vpdw2pi1lv5"]
 
 [ext_resource type="PackedScene" uid="uid://bvk6o6leaue0x" path="res://mainmenu.tscn" id="1_6274r"]
+[ext_resource type="Texture2D" uid="uid://d3q4gydka7wef" path="res://backgrounds/menu2.png" id="1_p5w8p"]
+[ext_resource type="Script" path="res://scripts/menubg.gd" id="2_vmof5"]
 
 [node name="main" type="Node2D"]
+
+[node name="bgmovement" type="Node2D" parent="."]
+
+[node name="bg1" type="Sprite2D" parent="bgmovement"]
+texture = ExtResource("1_p5w8p")
+centered = false
+hframes = 2
+script = ExtResource("2_vmof5")
+
+[node name="bg2" type="Sprite2D" parent="bgmovement"]
+position = Vector2(1152, 0)
+texture = ExtResource("1_p5w8p")
+centered = false
+hframes = 2
+frame = 1
+script = ExtResource("2_vmof5")
 
 [node name="Control" parent="." instance=ExtResource("1_6274r")]
 anchors_preset = 0

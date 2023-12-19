@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd51xv5fn016i"]
+[gd_scene load_steps=5 format=3 uid="uid://cd51xv5fn016i"]
 
-[ext_resource type="Script" path="res://endscreen.gd" id="1_kfir6"]
+[ext_resource type="Script" path="res://scripts/endscreen.gd" id="1_kfir6"]
 [ext_resource type="FontFile" uid="uid://bkxy3l4hhwk1b" path="res://nintendo-nes-font.ttf" id="2_wjc35"]
+[ext_resource type="Texture2D" uid="uid://dewe1465dhat7" path="res://backgrounds/endscreen.png" id="2_xjpm5"]
+[ext_resource type="Script" path="res://scripts/Title.gd" id="4_blxhs"]
 
 [node name="endscreen" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_kfir6")
+
+[node name="bg" type="Sprite2D" parent="."]
+texture = ExtResource("2_xjpm5")
+centered = false
 
 [node name="score" type="Label" parent="."]
 texture_filter = 1
@@ -15,6 +21,7 @@ offset_right = 334.0
 offset_bottom = 88.0
 scale = Vector2(3.995, 3.995)
 theme_override_fonts/font = ExtResource("2_wjc35")
+script = ExtResource("4_blxhs")
 
 [node name="MainMenu" type="Button" parent="."]
 anchors_preset = 4

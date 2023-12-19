@@ -1,14 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://co1bqli300oma"]
+[gd_scene load_steps=8 format=3 uid="uid://co1bqli300oma"]
 
-[ext_resource type="Script" path="res://shooting_range.gd" id="1_42342"]
+[ext_resource type="Script" path="res://scripts/shooting_range.gd" id="1_42342"]
 [ext_resource type="PackedScene" uid="uid://ow7101idlpsf" path="res://cursor.tscn" id="1_ouqnn"]
 [ext_resource type="PackedScene" uid="uid://1p0gdp3fmd40" path="res://target.tscn" id="2_42usk"]
+[ext_resource type="Script" path="res://scripts/shootingrangeBG.gd" id="2_n33gg"]
 [ext_resource type="FontFile" uid="uid://bkxy3l4hhwk1b" path="res://nintendo-nes-font.ttf" id="3_u07df"]
-[ext_resource type="Script" path="res://score.gd" id="4_ev6c4"]
-[ext_resource type="Script" path="res://time.gd" id="6_a1bl2"]
+[ext_resource type="Script" path="res://scripts/score.gd" id="4_ev6c4"]
+[ext_resource type="Script" path="res://scripts/time.gd" id="6_a1bl2"]
 
 [node name="shooting range" type="Node2D"]
 script = ExtResource("1_42342")
+
+[node name="bg" type="Sprite2D" parent="."]
+centered = false
+script = ExtResource("2_n33gg")
 
 [node name="target" parent="." instance=ExtResource("2_42usk")]
 position = Vector2(567, 334)

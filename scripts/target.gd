@@ -9,3 +9,4 @@ func _physics_process(delta):
 func _randomize_pos():
 	position = Vector2(randi_range(0, Screen.screen_width), randi_range(0, Screen.screen_height))
 	globals.shot = false
+

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvk6o6leaue0x"]
+[gd_scene load_steps=5 format=3 uid="uid://bvk6o6leaue0x"]
 
 [ext_resource type="Script" path="res://scripts/Start.gd" id="1_ibl1n"]
+[ext_resource type="FontFile" uid="uid://bkxy3l4hhwk1b" path="res://nintendo-nes-font.ttf" id="2_hr2fg"]
+[ext_resource type="Script" path="res://scripts/Title.gd" id="3_ehwqy"]
+[ext_resource type="AudioStream" uid="uid://etngdjih1ijh" path="res://music/menuloop.mp3" id="4_k7kkp"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -19,7 +22,24 @@ offset_right = 642.0
 offset_bottom = 358.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "start"
+text = "START
+"
 script = ExtResource("1_ibl1n")
+
+[node name="Title" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 236.0
+offset_top = 80.0
+offset_right = 412.0
+offset_bottom = 103.0
+scale = Vector2(3.995, 3.995)
+theme_override_fonts/font = ExtResource("2_hr2fg")
+text = "AIM TRAINER"
+script = ExtResource("3_ehwqy")
+
+[node name="menumusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_k7kkp")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
