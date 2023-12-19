@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ow7101idlpsf"]
 
 [ext_resource type="Script" path="res://scripts/cursor.gd" id="1_wa47r"]
-[ext_resource type="Texture2D" uid="uid://sg4ilfxf51nk" path="res://icon.svg" id="2_edwsi"]
+[ext_resource type="Texture2D" uid="uid://23sa00u5ttaw" path="res://crosshair/Crosshair Pack.png" id="2_hnp2i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vkfg"]
 size = Vector2(50, 50)
@@ -11,7 +11,10 @@ scale = Vector2(0.2, 0.2)
 script = ExtResource("1_wa47r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_edwsi")
+scale = Vector2(7, 7)
+texture = ExtResource("2_hnp2i")
+hframes = 7
+vframes = 4
 
 [node name="Area2D" type="Area2D" parent="."]
 

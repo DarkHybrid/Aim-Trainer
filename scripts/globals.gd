@@ -5,6 +5,7 @@ var shot : bool
 var score = 0
 var time : float
 
+var crosshair : int
 
 const bgTextures = [preload("res://backgrounds/shootingrange1.png"), preload("res://backgrounds/shootingrange2.png"), preload("res://backgrounds/shootingrange3.png"), preload("res://backgrounds/shootingrange4.png"), preload("res://backgrounds/shootingrange5.png")]
 

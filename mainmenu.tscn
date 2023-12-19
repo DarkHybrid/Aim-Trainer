@@ -1,15 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvk6o6leaue0x"]
+[gd_scene load_steps=8 format=3 uid="uid://bvk6o6leaue0x"]
 
 [ext_resource type="Script" path="res://scripts/Start.gd" id="1_ibl1n"]
 [ext_resource type="FontFile" uid="uid://bkxy3l4hhwk1b" path="res://nintendo-nes-font.ttf" id="2_hr2fg"]
+[ext_resource type="Script" path="res://Options.gd" id="2_xitmj"]
 [ext_resource type="Script" path="res://scripts/Title.gd" id="3_ehwqy"]
 [ext_resource type="AudioStream" uid="uid://etngdjih1ijh" path="res://music/menuloop.mp3" id="4_k7kkp"]
+[ext_resource type="Script" path="res://optionsWindow.gd" id="6_vvdw8"]
+[ext_resource type="Script" path="res://Crosshair.gd" id="6_xvxqv"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 15.0
+offset_right = 18.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -25,6 +32,15 @@ grow_vertical = 2
 text = "START
 "
 script = ExtResource("1_ibl1n")
+
+[node name="Options" type="Button" parent="."]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 386.0
+offset_right = 642.0
+offset_bottom = 445.0
+text = "OPTIONS"
+script = ExtResource("2_xitmj")
 
 [node name="Title" type="Label" parent="."]
 texture_filter = 1
@@ -42,4 +58,45 @@ script = ExtResource("3_ehwqy")
 stream = ExtResource("4_k7kkp")
 autoplay = true
 
+[node name="optionsWindow" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_vvdw8")
+
+[node name="Panel" type="Panel" parent="optionsWindow"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 56.0
+offset_right = 1003.0
+offset_bottom = 572.0
+
+[node name="OptionButton" type="OptionButton" parent="optionsWindow/Panel"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 144.0
+offset_bottom = 47.0
+item_count = 5
+selected = 0
+popup/item_0/text = "DEFAULT"
+popup/item_0/id = 0
+popup/item_1/text = "DOT"
+popup/item_1/id = 1
+popup/item_2/text = "DOT (x2)"
+popup/item_2/id = 2
+popup/item_3/text = "ARROW"
+popup/item_3/id = 3
+popup/item_4/text = "ARROW FILLED"
+popup/item_4/id = 4
+script = ExtResource("6_xvxqv")
+
+[node name="Label" type="Label" parent="optionsWindow/Panel/OptionButton"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -16.0
+offset_right = 42.0
+text = "CROSSHAIR"
+
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Options" to="Options" method="_on_pressed"]
