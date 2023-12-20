@@ -11,6 +11,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	queue_redraw()
+	if Input.is_action_just_pressed("restart_scene"):
+		get_tree().reload_current_scene()
 	pass
 
 
