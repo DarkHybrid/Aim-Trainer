@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bvk6o6leaue0x" path="res://mainmenu.tscn" id="1_6274r"]
 [ext_resource type="Texture2D" uid="uid://d3q4gydka7wef" path="res://backgrounds/menu2.png" id="1_p5w8p"]
 [ext_resource type="Script" path="res://scripts/menubg.gd" id="2_vmof5"]
-[ext_resource type="PackedScene" uid="uid://ow7101idlpsf" path="res://cursor.tscn" id="4_k3oge"]
+[ext_resource type="PackedScene" uid="uid://ow7101idlpsf" path="res://cursor.tscn" id="4_jfbxn"]
 
 [node name="main" type="Node2D"]
 
@@ -34,4 +34,4 @@ offset_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="cursor" parent="." instance=ExtResource("4_k3oge")]
+[node name="cursor" parent="." instance=ExtResource("4_jfbxn")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvk6o6leaue0x"]
+[gd_scene load_steps=10 format=3 uid="uid://bvk6o6leaue0x"]
 
 [ext_resource type="Script" path="res://scripts/Start.gd" id="1_ibl1n"]
 [ext_resource type="FontFile" uid="uid://bkxy3l4hhwk1b" path="res://nintendo-nes-font.ttf" id="2_hr2fg"]
@@ -8,15 +8,37 @@
 [ext_resource type="Script" path="res://optionsWindow.gd" id="6_vvdw8"]
 [ext_resource type="Script" path="res://Crosshair.gd" id="6_xvxqv"]
 
+[sub_resource type="Animation" id="Animation_f1hal"]
+resource_name = "rgb_effect"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0.00392157, 1), Color(0, 1, 0.00392157, 1), Color(0, 0, 1, 1), Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g03wf"]
+_data = {
+"rgb_effect": SubResource("Animation_f1hal")
+}
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 18.0
-offset_top = 15.0
-offset_right = 18.0
-offset_bottom = 15.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -53,6 +75,26 @@ scale = Vector2(3.995, 3.995)
 theme_override_fonts/font = ExtResource("2_hr2fg")
 text = "AIM TRAINER"
 script = ExtResource("3_ehwqy")
+
+[node name="space edition" type="Label" parent="Title"]
+self_modulate = Color(1, 0, 0.00392157, 1)
+layout_mode = 0
+offset_left = -0.250313
+offset_top = 14.0175
+offset_right = 191.75
+offset_bottom = 30.0175
+scale = Vector2(0.33, 0.33)
+text = "space edition"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Title/space edition"]
+libraries = {
+"": SubResource("AnimationLibrary_g03wf")
+}
+speed_scale = 0.5
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Title"]
+position = Vector2(84.7309, 60.826)
+scale = Vector2(14.3805, 8.18523)
 
 [node name="menumusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_k7kkp")
@@ -100,3 +142,5 @@ text = "CROSSHAIR"
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="pressed" from="Options" to="Options" method="_on_pressed"]
+[connection signal="screen_entered" from="Title/VisibleOnScreenNotifier2D" to="Title" method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="item_selected" from="optionsWindow/Panel/OptionButton" to="optionsWindow/Panel/OptionButton" method="_on_item_selected"]

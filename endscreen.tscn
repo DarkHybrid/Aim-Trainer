@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd51xv5fn016i"]
+[gd_scene load_steps=6 format=3 uid="uid://cd51xv5fn016i"]
 
 [ext_resource type="Script" path="res://scripts/endscreen.gd" id="1_kfir6"]
 [ext_resource type="FontFile" uid="uid://bkxy3l4hhwk1b" path="res://nintendo-nes-font.ttf" id="2_wjc35"]
 [ext_resource type="Texture2D" uid="uid://dewe1465dhat7" path="res://backgrounds/endscreen.png" id="2_xjpm5"]
 [ext_resource type="Script" path="res://scripts/Title.gd" id="4_blxhs"]
+[ext_resource type="PackedScene" uid="uid://ow7101idlpsf" path="res://cursor.tscn" id="5_lsll6"]
 
 [node name="endscreen" type="Node2D"]
 texture_filter = 1
@@ -45,6 +46,8 @@ offset_right = 654.0
 offset_bottom = 539.0
 theme_override_fonts/font = ExtResource("2_wjc35")
 text = "RESTART"
+
+[node name="cursor" parent="." instance=ExtResource("5_lsll6")]
 
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
