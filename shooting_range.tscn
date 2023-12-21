@@ -30,7 +30,6 @@ script = ExtResource("4_ev6c4")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 15.0
-autostart = true
 
 [node name="time" type="Label" parent="."]
 texture_filter = 1

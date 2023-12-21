@@ -10,6 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	$score/time.text = "TIME: " + str(globals.time)
 	pass
 
 

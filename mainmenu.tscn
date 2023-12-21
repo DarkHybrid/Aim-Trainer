@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://scripts/Start.gd" id="1_ibl1n"]
 [ext_resource type="FontFile" uid="uid://bkxy3l4hhwk1b" path="res://nintendo-nes-font.ttf" id="2_hr2fg"]
-[ext_resource type="Script" path="res://Options.gd" id="2_xitmj"]
+[ext_resource type="Script" path="res://scripts/Options.gd" id="2_xitmj"]
 [ext_resource type="Script" path="res://scripts/Title.gd" id="3_ehwqy"]
 [ext_resource type="AudioStream" uid="uid://etngdjih1ijh" path="res://music/menuloop.mp3" id="4_k7kkp"]
-[ext_resource type="Script" path="res://optionsWindow.gd" id="6_vvdw8"]
-[ext_resource type="Script" path="res://Crosshair.gd" id="6_xvxqv"]
+[ext_resource type="Script" path="res://scripts/optionsWindow.gd" id="6_vvdw8"]
+[ext_resource type="Script" path="res://scripts/Crosshair.gd" id="6_xvxqv"]
 
 [sub_resource type="Animation" id="Animation_f1hal"]
 resource_name = "rgb_effect"
@@ -101,7 +101,6 @@ stream = ExtResource("4_k7kkp")
 autoplay = true
 
 [node name="optionsWindow" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -109,10 +108,10 @@ script = ExtResource("6_vvdw8")
 
 [node name="Panel" type="Panel" parent="optionsWindow"]
 layout_mode = 0
-offset_left = 167.0
-offset_top = 56.0
-offset_right = 1003.0
-offset_bottom = 572.0
+offset_left = 183.0
+offset_top = 52.0
+offset_right = 1019.0
+offset_bottom = 568.0
 
 [node name="OptionButton" type="OptionButton" parent="optionsWindow/Panel"]
 layout_mode = 0
@@ -177,6 +176,40 @@ offset_top = -15.0
 offset_right = 152.0
 offset_bottom = 1.0
 text = "SCALE"
+
+[node name="mastervolume" type="HSlider" parent="optionsWindow/Panel"]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 139.0
+offset_right = 808.0
+offset_bottom = 155.0
+min_value = -1000.0
+max_value = 0.0
+
+[node name="Label" type="Label" parent="optionsWindow/Panel/mastervolume"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = -16.0
+offset_right = 232.0
+text = "MASTER VOLUME"
+
+[node name="Time" type="HSlider" parent="optionsWindow"]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 480.0
+offset_right = 424.0
+offset_bottom = 502.0
+min_value = 5.0
+max_value = 60.0
+value = 5.0
+
+[node name="Label" type="Label" parent="optionsWindow/Time"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -13.0
+offset_right = 232.0
+offset_bottom = 3.0
+text = "TIME: NA"
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="pressed" from="Options" to="Options" method="_on_pressed"]

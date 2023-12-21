@@ -4,6 +4,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Timer.wait_time = globals.time
+	$Timer.start()
 	globals.score = 0
 	pass # Replace with function body.
 

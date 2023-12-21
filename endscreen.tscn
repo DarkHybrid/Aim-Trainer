@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cd51xv5fn016i"]
+[gd_scene load_steps=7 format=3 uid="uid://cd51xv5fn016i"]
 
 [ext_resource type="Script" path="res://scripts/endscreen.gd" id="1_kfir6"]
 [ext_resource type="FontFile" uid="uid://bkxy3l4hhwk1b" path="res://nintendo-nes-font.ttf" id="2_wjc35"]
 [ext_resource type="Texture2D" uid="uid://dewe1465dhat7" path="res://backgrounds/endscreen.png" id="2_xjpm5"]
 [ext_resource type="Script" path="res://scripts/Title.gd" id="4_blxhs"]
+[ext_resource type="Script" path="res://scripts/optionsWindow.gd" id="5_ibupa"]
 [ext_resource type="PackedScene" uid="uid://ow7101idlpsf" path="res://cursor.tscn" id="5_lsll6"]
 
 [node name="endscreen" type="Node2D"]
@@ -24,6 +25,12 @@ scale = Vector2(3.995, 3.995)
 theme_override_fonts/font = ExtResource("2_wjc35")
 script = ExtResource("4_blxhs")
 
+[node name="time" type="Label" parent="score"]
+offset_left = 55.3192
+offset_top = 53.0663
+offset_right = 183.319
+offset_bottom = 126.066
+
 [node name="MainMenu" type="Button" parent="."]
 anchors_preset = 4
 anchor_top = 0.5
@@ -37,6 +44,7 @@ size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_wjc35")
 text = "MAIN MENU
 "
+script = ExtResource("5_ibupa")
 
 [node name="Restart" type="Button" parent="."]
 texture_filter = 1
